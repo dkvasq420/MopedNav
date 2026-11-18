@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0E1A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="40dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&#128203;"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liability Waiver"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please read and accept before riding"
+            android:textColor="#00D4FF"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Waiver text card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#1E2A3A"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textColor="#CCFFFFFF"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.5"
+                android:text="SCOOTROUTE — TERMS OF USE &amp; LIABILITY WAIVER\n\nBy using ScootRoute, you acknowledge and agree to the following:\n\n1. ASSUMPTION OF RISK\nMoped and scooter riding involves inherent risks including but not limited to collision, injury, or death. You voluntarily assume all risks associated with using this navigation application.\n\n2. ROUTING DISCLAIMER\nScootRoute provides routing guidance for informational purposes only. Routes may include roads, paths, or surfaces that may not be suitable for all vehicles. Always obey local traffic laws and posted signage.\n\n3. BIKE PATH NOTICE\nSome routes may include dedicated bike paths or lanes. It is your responsibility to verify whether motorized vehicles are permitted on any given path in your jurisdiction.\n\n4. ACCURACY DISCLAIMER\nMap data, traffic information, and routing suggestions may not always be accurate or up to date. ScootRoute is not responsible for errors, omissions, or outdated information.\n\n5. LIMITATION OF LIABILITY\nScootRoute, its developers, and affiliates shall not be held liable for any damages, injuries, losses, or legal consequences arising from use of this application.\n\n6. YOUR RESPONSIBILITY\nYou are solely responsible for ensuring your vehicle is properly licensed, insured, and roadworthy. Always wear appropriate safety gear including a helmet.\n\n7. AGREEMENT\nBy signing below, you confirm that you have read, understood, and agree to these terms." />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Error message -->
+        <TextView
+            android:id="@+id/tvWaiverError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF4444"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <!-- Checkbox -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <CheckBox
+                android:id="@+id/cbAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#00D4FF"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="I have read, understood, and agree to the ScootRoute Terms of Use and Liability Waiver"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+
+        <!-- Digital signature -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digital Signature"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="#1E2A3A"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <EditText
+                android:id="@+id/etSignature"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Type your full legal name"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#66FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:background="@null"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:inputType="textPersonName"
+                android:singleLine="true" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your typed name serves as your digital signature"
+            android:textColor="#666666"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Accept button -->
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="I Accept — Continue to App"
+            android:textColor="#0A0E1A"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/btn_cyan_rounded"
+            android:stateListAnimator="@null"
+            android:alpha="0.5" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_route_step.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <!-- Direction circle icon -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardBackgroundColor="#2A3A4A"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/tvStepIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="↑"
+            android:textColor="#00D4FF"
+            android:textSize="18sp"
+            android:gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Instruction + sub-distance -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvStepInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Head south toward the coast"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tvStepDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.2 km"
+            android:textColor="#66FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Distance badge (right side) -->
+    <TextView
+        android:id="@+id/tvStepDistanceBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.2 km"
+        android:textColor="#888888"
+        android:textSize="12sp" />
+
+</LinearLayout>

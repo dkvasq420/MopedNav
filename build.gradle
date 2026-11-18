@@ -1,0 +1,24 @@
+// Root build.gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // AGP 4.2.2 — last version supporting Java 8
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        // Google Services 4.3.10 — compatible with AGP 4.2.2
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

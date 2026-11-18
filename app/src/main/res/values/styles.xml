@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#00D4FF</item>
+        <item name="colorPrimaryDark">#0A0E1A</item>
+        <item name="colorAccent">#00D4FF</item>
+        <item name="android:windowBackground">#0A0E1A</item>
+        <item name="android:statusBarColor">#0A0E1A</item>
+        <item name="android:navigationBarColor">#0F1620</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#AAAAAA</item>
+        <item name="colorControlHighlight">#2200D4FF</item>
+        <item name="colorControlNormal">#00D4FF</item>
+        <item name="alertDialogTheme">@style/ScootRouteDialog</item>
+    </style>
+
+    <style name="ScootRouteDialog"
+        parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">#1E2A3A</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="colorAccent">#00D4FF</item>
+    </style>
+</resources>

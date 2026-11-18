@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @media print {
+    body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  body {
+    background: white;
+    font-family: Arial, sans-serif;
+    width: 11in;
+    height: 8.5in;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ═══════════════════
+     MAIN CONTENT AREA
+  ════════════════════ */
+  .main {
+    flex: 1;
+    padding: 0.35in 0.4in 0.2in 0.4in;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px dashed #000;
+  }
+
+  /* Header row */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.2in;
+    border-bottom: 3px solid #000;
+    padding-bottom: 0.15in;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-icon {
+    width: 72px; height: 72px;
+    border: 3px solid #000;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    background: #f0f0f0;
+  }
+
+  .logo-text h1 {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #000;
+    line-height: 1;
+  }
+
+  .logo-text p {
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .beta-badge {
+    display: inline-block;
+    border: 3px solid #000;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #000;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .header-right p {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+  }
+
+  /* Hero section */
+  .hero {
+    margin-bottom: 0.18in;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero h2 span {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.5;
+    max-width: 7in;
+  }
+
+  /* Features grid */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 0.18in;
+    flex: 1;
+  }
+
+  .feature {
+    border: 2px solid #000;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+
+  .feature strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 3px;
+    color: #000;
+  }
+
+  .feature span {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.3;
+  }
+
+  .feature .icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  /* What we need row */
+  .what-we-need {
+    background: #000;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.12in;
+  }
+
+  .what-we-need h3 {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+
+  .what-we-need p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  .what-we-need .perks {
+    text-align: right;
+    font-size: 12px;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .what-we-need .divider-v {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.3);
+    margin: 0 16px;
+  }
+
+  /* Contact section */
+  .contact-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #000;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #f5f5f5;
+  }
+
+  .contact-section h3 {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .contact-item span {
+    font-size: 18px;
+  }
+
+  .contact-divider {
+    width: 1px;
+    height: 24px;
+    background: #ccc;
+  }
+
+  /* ═══════════════════
+     TEAR OFF SECTION
+  ════════════════════ */
+  .tearoff {
+    height: 1.1in;
+    padding: 0 0.3in;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+  }
+
+  .tearoff-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px 0 0;
+    border-right: 2px solid #000;
+    margin-right: 8px;
+    width: 1.8in;
+    flex-shrink: 0;
+  }
+
+  .tearoff-intro p {
+    font-size: 10px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  .tearoff-intro .arrow {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  /* Individual tear-off tabs */
+  .tabs-container {
+    display: flex;
+    flex: 1;
+    gap: 0;
+  }
+
+  .tab {
+    flex: 1;
+    border-right: 1px dashed #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    gap: 6px;
+  }
+
+  .tab:last-child {
+    border-right: none;
+  }
+
+  .tab .app-name {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .tab .contact-info {
+    font-size: 10px;
+    color: #333;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  .tab .emoji-row {
+    font-size: 14px;
+  }
+
+  .scissor-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0.4in;
+  }
+
+  .scissor-line .scissors {
+    font-size: 16px;
+    transform: rotate(90deg);
+    display: inline-block;
+  }
+
+  .scissor-line .dash {
+    flex: 1;
+    border-top: 2px dashed #000;
+  }
+</style>
+</head>
+<body>
+
+<!-- MAIN FLYER CONTENT -->
+<div class="main">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-icon">🛵</div>
+      <div class="logo-text">
+        <h1>ScootRoute</h1>
+        <p>Hawaii's Moped Navigation App</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="beta-badge">★ BETA TESTERS WANTED ★</div>
+      <p>Android phone required · Free to join · Only 12 spots!</p>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h2>Be One of the First 12 People to Use<br>
+    <span>Oahu's First Moped Navigation App!</span></h2>
+    <p>ScootRoute routes moped and scooter riders around Oahu using
+    <strong>surface streets only</strong> — never sending you onto
+    H1, H2 or H3 freeways where mopeds aren't allowed.
+    We need 12 local riders to test the app for 14 days before
+    it launches on Google Play. <strong>No experience needed —
+    just ride and give us feedback!</strong></p>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature">
+      <span class="icon">🚫</span>
+      <strong>Zero Freeway Routing</strong>
+      <span>Automatically avoids H1, H2 &amp; H3 — every single route</span>
+    </div>
+    <div class="feature">
+      <span class="icon">🎙️</span>
+      <strong>Voice Navigation</strong>
+      <span>Turn-by-turn spoken directions like Google Maps</span>
+    </div>
+    <div class="feature">
+      <span class="icon">🛰️</span>
+      <strong>Satellite + Street View</strong>
+      <span>Switch between map styles with one tap</span>
+    </div>
+    <div class="feature">
+      <span class="icon">⚠️</span>
+      <strong>Hazard Reporting</strong>
+      <span>Report potholes, flooding, road closures &amp; more</span>
+    </div>
+    <div class="feature">
+      <span class="icon">🏍️</span>
+      <strong>Moped Rentals</strong>
+      <span>Find and book moped rentals across Oahu</span>
+    </div>
+    <div class="feature">
+      <span class="icon">📊</span>
+      <strong>Ride Tracking</strong>
+      <span>Track your rides, distance &amp; route history</span>
+    </div>
+  </div>
+
+  <!-- What we need bar -->
+  <div class="what-we-need">
+    <div>
+      <h3>What We Need From You</h3>
+      <p>Install the app · Use it for 14 days · Tell us what you think!</p>
+    </div>
+    <div class="divider-v"></div>
+    <div class="perks">
+      ★ FREE Plus subscription ($2.99/mo value)<br>
+      ★ Founding Member status in the app<br>
+      ★ Your name in the app credits · Made in Honolulu 🌺
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-section">
+    <h3>→ Contact to Sign Up:</h3>
+    <div class="contact-item">
+      <span>📧</span>
+      davidkvasquez@gmail.com
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-item">
+      <span>📘</span>
+      Facebook: David Freedizzle
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-item">
+      <span>📱</span>
+      Android phone required
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-item">
+      <span>⏱️</span>
+      Only 14 days · Totally free!
+    </div>
+  </div>
+
+</div>
+
+<!-- SCISSOR LINE -->
+<div class="scissor-line">
+  <span class="scissors">✂</span>
+  <div class="dash"></div>
+  <span style="font-size:10px; color:#666; white-space:nowrap; font-weight:bold;">TEAR OFF AND KEEP</span>
+  <div class="dash"></div>
+  <span class="scissors">✂</span>
+</div>
+
+<!-- TEAR OFF TABS -->
+<div class="tearoff">
+  <div class="tearoff-intro">
+    <div class="arrow">↓</div>
+    <p>Tear off<br>a tab &amp;<br>contact us<br>to join!</p>
+  </div>
+  <div class="tabs-container">
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+    <div class="tab">
+      <span class="emoji-row">🛵</span>
+      <span class="app-name">ScootRoute Beta</span>
+      <span class="contact-info">📧 davidkvasquez@gmail.com</span>
+      <span class="contact-info">📘 David Freedizzle</span>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

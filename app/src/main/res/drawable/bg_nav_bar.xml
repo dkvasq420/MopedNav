@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dark base -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F00A0E1A" />
+        </shape>
+    </item>
+    <!-- Top border glow -->
+    <item android:bottom="62dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#00D4FF"
+                android:centerColor="#4400D4FF"
+                android:endColor="#00D4FF"
+                android:angle="0" />
+        </shape>
+    </item>
+</layer-list>

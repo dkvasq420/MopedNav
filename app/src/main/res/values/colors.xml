@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/values/colors.xml -->
+<!--
+    ╔══════════════════════════════════════════╗
+    ║   MOPED NAVIGATOR — Design System Colors ║
+    ╚══════════════════════════════════════════╝
+    Extracted from FlutterFlow screenshots.
+    Glassmorphism over satellite imagery aesthetic.
+-->
+<resources>
+
+    <!-- ── Brand / Accent ── -->
+    <color name="cyan_primary">#00D4FF</color>      <!-- Main CTA, icons, highlights -->
+    <color name="cyan_secondary">#00B4D8</color>    <!-- Secondary teal -->
+    <color name="cyan_text">#00D4FF</color>          <!-- Cyan text links -->
+
+    <!-- ── Backgrounds ── -->
+    <color name="bg_deep">#0A0E1A</color>            <!-- Deep near-black base -->
+    <color name="bg_dark">#0D1420</color>            <!-- Slightly lighter dark -->
+
+    <!-- ── Glass Cards ── -->
+    <color name="glass_card">#CC1E2A3A</color>       <!-- 80% opacity dark blue-grey -->
+    <color name="glass_card_solid">#1E2A3A</color>   <!-- Same without alpha -->
+    <color name="glass_inner">#2A3A4A</color>        <!-- Inner elements on cards -->
+    <color name="glass_divider">#44FFFFFF</color>    <!-- Subtle white divider -->
+
+    <!-- ── Text ── -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_hint">#66FFFFFF</color>
+    <color name="text_muted">#888888</color>
+
+    <!-- ── Status / Semantic ── -->
+    <color name="status_green">#00C853</color>       <!-- Battery good, arrival -->
+    <color name="status_orange">#FF9500</color>      <!-- Add tag FAB, warnings -->
+    <color name="status_red">#FF3B30</color>         <!-- Close/cancel button -->
+
+    <!-- ── Bottom Nav ── -->
+    <color name="nav_active">#00D4FF</color>
+    <color name="nav_inactive">#555555</color>
+
+</resources>

@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_dashboard.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_item_faq.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/item_faq.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_item_rental_partner.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/item_rental_partner.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_moped_rental.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_moped_rental.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/drawable_bg_nav_bar.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/drawable/bg_nav_bar.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_hazard_report.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_hazard_report.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/drawable_btn_cyan_rounded.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/drawable/btn_cyan_rounded.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_waiver.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_waiver.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_item_rental_shop.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/item_rental_shop.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_onboarding.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_onboarding.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_item_route_history.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/item_route_history.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_main.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_help.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_help.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_item_route_step.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/item_route_step.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/drawable_btn_outline_cyan.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/drawable/btn_outline_cyan.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/drawable_bg_input_field.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/drawable/bg_input_field.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/drawable_bg_glass_card.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/drawable/bg_glass_card.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_settings.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_auth.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_auth.xml"
+    },
+    {
+        "merged": "/storage/internal_new/project/mopednavigator/app/build/intermediates/res/merged/release/layout_activity_account.xml.flat",
+        "source": "/storage/internal_new/project/mopednavigator/app/src/main/res/layout/activity_account.xml"
+    }
+]

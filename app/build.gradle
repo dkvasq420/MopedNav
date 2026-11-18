@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdkVersion 35
+
+    defaultConfig {
+        applicationId "com.scootroute.mopednav"
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 4
+        versionName "1.3"
+    }
+
+    signingConfigs {
+        release {
+            // Update path if keystore is in different location
+            // Run: find /storage -name "*.keystore" to locate it
+            storeFile file('/storage/internal_new/project/mopednavigator/scootroute.keystore')
+            storePassword 'password'
+            keyAlias 'scootroute'
+            keyPassword 'password'
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Debug builds don't need signing config
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // OSMDroid maps
+    implementation 'org.osmdroid:osmdroid-android:6.1.13'
+
+    // OkHttp networking
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    // Google Play Location
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    // AndroidX
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    // Firebase BoM — Java 8 compatible version
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // AdMob
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+}
