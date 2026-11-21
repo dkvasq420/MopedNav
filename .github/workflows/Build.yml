@@ -20,6 +20,21 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Install Gradle 8.7 and generate wrapper if missing
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Ensure gradlew wrapper exists
+        run: |
+          if [ ! -f ./gradlew ] || [ ! -f gradle/wrapper/gradle-wrapper.properties ]; then
+            gradle wrapper --gradle-version 8.7
+          fi
+          sed -i 's/\r$//' gradlew
+          chmod +x ./gradlew
+          rm -rf /home/test/.gradle/wrapper/dists/gradle-6.9* \
+                 "${GRADLE_USER_HOME:-$HOME/.gradle}"/wrapper/dists/gradle-6.9* || true
+
       - name: Decode release keystore
         run: |
           mkdir -p app
@@ -39,15 +54,6 @@ jobs:
         env:
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
-
-      - name: Fix Gradle wrapper and clear stale 6.9 cache
-        run: |
-          sed -i 's/\r$//' gradlew
-          chmod +x ./gradle
-          echo "--- gradle-wrapper.properties ---"
-          cat gradle/wrapper/gradle-wrapper.properties
-          rm -rf /home/test/.gradle/wrapper/dists/gradle-6.9* \
-                 "${GRADLE_USER_HOME:-$HOME/.gradle}"/wrapper/dists/gradle-6.9* || true
 
       - name: Build signed release AAB
         run: ./gradlew :app:bundleRelease --stacktrace
