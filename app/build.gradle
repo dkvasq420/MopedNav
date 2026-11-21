@@ -19,16 +19,16 @@ android {
     }
     
 
-    signingConfigs {
+        signingConfigs {
         release {
-            // Update path if keystore is in different location
-            // Run: find /storage -name "*.keystore" to locate it
-            storeFile file('/storage/internal_new/project/mopednavigator/scootroute.keystore')
-            storePassword 'password'
-            keyAlias 'scootroute'
-            keyPassword 'password'
+            def storeFilePath = project.findProperty("RELEASE_STORE_FILE") ?: '/storage/internal_new/project/mopednavigator/scootroute.keystore'
+            storeFile file(storeFilePath)
+            storePassword project.findProperty("RELEASE_STORE_PASSWORD") ?: 'password'
+            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: 'scootroute'
+            keyPassword project.findProperty("RELEASE_KEY_PASSWORD") ?: 'password'
         }
     }
+    
 
     buildTypes {
         debug {
