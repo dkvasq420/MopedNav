@@ -30,7 +30,7 @@ jobs:
           gradle-version: '8.7'
 
       - name: Build Release AAB
-        run: gradle bundleRelease
+        run: gradle bundleRelease--stacktrace--info
 
       - name: Upload AAB Artifact
         uses: actions/upload-artifact@v7
