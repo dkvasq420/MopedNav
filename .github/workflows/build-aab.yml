@@ -31,7 +31,13 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           chmod +x gradlew
-          ./gradlew bundleRelease --stacotrace
+          ./gradlew bundleRelease --console=plain > build.log 2>&1 || {
+            echo "===== ERRORS ====="
+            grep -nE "error:|^e: |What went wrong|Caused by" -A4 build.log | head -80
+            echo "===== LAST 40 LINES ====="
+            tail -n 40 build.log
+            exit 1
+          }
 
       - name: Upload AAB
         uses: actions/upload-artifact@v4
