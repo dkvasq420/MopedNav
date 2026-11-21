@@ -17,18 +17,18 @@ android {
     buildFeatures {
         buildConfig true
     }
-    
 
-        signingConfigs {
+    signingConfigs {
         release {
-            def storeFilePath = project.findProperty("RELEASE_STORE_FILE") ?: '/storage/internal_new/project/mopednavigator/scootroute.keystore'
-            storeFile file(storeFilePath)
-            storePassword project.findProperty("RELEASE_STORE_PASSWORD") ?: 'password'
-            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: 'scootroute'
-            keyPassword project.findProperty("RELEASE_KEY_PASSWORD") ?: 'password'
+            def storeFileProp = project.findProperty("RELEASE_STORE_FILE")
+            if (storeFileProp) {
+                storeFile file(storeFileProp)
+            }
+            storePassword project.findProperty("RELEASE_STORE_PASSWORD") ?: ""
+            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: ""
+            keyPassword project.findProperty("RELEASE_KEY_PASSWORD") ?: ""
         }
     }
-    
 
     buildTypes {
         debug {
