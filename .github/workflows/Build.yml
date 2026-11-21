@@ -43,7 +43,7 @@ jobs:
       - name: Fix Gradle wrapper and clear stale 6.9 cache
         run: |
           sed -i 's/\r$//' gradlew
-          chmod +x ./gradlew
+          chmod +x ./gradle
           echo "--- gradle-wrapper.properties ---"
           cat gradle/wrapper/gradle-wrapper.properties
           rm -rf /home/test/.gradle/wrapper/dists/gradle-6.9* \
