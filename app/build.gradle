@@ -19,14 +19,13 @@ android {
     }
 
     signingConfigs {
-        release {
-            def storeFileProp = project.findProperty("RELEASE_STORE_FILE")
-            if (storeFileProp) {
-                storeFile file(storeFileProp)
-            }
-            storePassword project.findProperty("RELEASE_STORE_PASSWORD") ?: "password"
-            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: "scootroute"
-            keyPassword project.findProperty("RELEASE_KEY_PASSWORD") ?: "password"
+    release {
+        def ks = System.getenv("KEYSTORE_PATH")
+        if (ks != null) {
+            storeFile file(ks)
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
         }
     }
 
