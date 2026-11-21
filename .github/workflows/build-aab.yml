@@ -31,7 +31,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           chmod +x gradlew
-          ./gradlew bundleRelease
+          ./gradlew bundleRelease --info
 
       - name: Upload AAB
         uses: actions/upload-artifact@v4
