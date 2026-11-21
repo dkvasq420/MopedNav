@@ -20,21 +20,6 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Install Gradle 8.7 and generate wrapper if missing
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: "8.7"
-
-      - name: Ensure gradlew wrapper exists
-        run: |
-          if [ ! -f ./gradlew ] || [ ! -f gradle/wrapper/gradle-wrapper.properties ]; then
-            gradle wrapper --gradle-version 8.7
-          fi
-          sed -i 's/\r$//' gradlew
-          chmod +x ./gradlew
-          rm -rf /home/test/.gradle/wrapper/dists/gradle-6.9* \
-                 "${GRADLE_USER_HOME:-$HOME/.gradle}"/wrapper/dists/gradle-6.9* || true
-
       - name: Decode release keystore
         run: |
           mkdir -p app
@@ -54,6 +39,34 @@ jobs:
         env:
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+
+      - name: Replace broken gradlew stub and configure Gradle 8.7 wrapper
+        run: |
+          echo "--- Old gradlew contents ---"
+          cat gradlew || true
+
+          mkdir -p gradle/wrapper
+
+          cat <<'EOF' > gradle/wrapper/gradle-wrapper.properties
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.7-bin.zip
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          EOF
+
+          curl -fsSL -o gradle/wrapper/gradle-wrapper.jar \
+            https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradle/wrapper/gradle-wrapper.jar
+
+          cat <<'EOF' > gradlew
+          #!/usr/bin/env sh
+          exec java ${DEFAULT_JVM_OPTS} ${JAVA_OPTS} ${GRADLE_OPTS} \
+            -classpath gradle/wrapper/gradle-wrapper.jar \
+            org.gradle.wrapper.GradleWrapperMain "$@"
+          EOF
+
+          chmod +x ./gradlew
+          ./gradlew --version
 
       - name: Build signed release AAB
         run: ./gradlew :app:bundleRelease --stacktrace
