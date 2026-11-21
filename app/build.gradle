@@ -25,7 +25,7 @@ android {
                 storeFile file(storeFileProp)
             }
             storePassword project.findProperty("RELEASE_STORE_PASSWORD") ?: "password"
-            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: "ima"
+            keyAlias project.findProperty("RELEASE_KEY_ALIAS") ?: "scootroute"
             keyPassword project.findProperty("RELEASE_KEY_PASSWORD") ?: "password"
         }
     }
