@@ -18,25 +18,12 @@ android {
         buildConfig true
     }
 
-    signingConfigs {
-        release {
-            def ks = System.getenv("KEYSTORE_PATH")
-            if (ks != null) {
-                storeFile file(ks)
-                storePassword System.getenv("KEYSTORE_PASSWORD")
-                keyAlias System.getenv("KEY_ALIAS")
-                keyPassword System.getenv("KEY_PASSWORD")
-            }
-        }
-    }
-
     buildTypes {
         debug {
-            // Debug builds don't need signing config
+            // Debug builds are signed with the default debug keystore
         }
         release {
             minifyEnabled false
-            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile(
                 'proguard-android-optimize.txt'),
                 'proguard-rules.pro'
