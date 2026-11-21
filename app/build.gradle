@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 35
+    namespace "com.scootroute.mopednav"
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.scootroute.mopednav"
-        minSdkVersion 24
-        targetSdkVersion 36
+        minSdk 24
+        targetSdk 36
         versionCode 4
         versionName "1.3"
     }
