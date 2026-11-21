@@ -1,7 +1,0 @@
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
-        with:
-          gradle-version: '7.6.4' # Matches older Gradle 6/7 projects cleanly
-
-      - name: Build Release AAB
-        run: gradle bundleRelease
